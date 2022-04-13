@@ -3,19 +3,21 @@ $(document).ready(function () {
     $('.btn').click(function (e) {
         e.preventDefault();
         commentsCount = commentsCount + 2;
+        /*$('#response').html('');*/
 
         $.ajax({
             url: '../../controllers/2messages.php',
             type: 'POST',
             dataType: 'json',
             data: {
-                commentNewCount: commentsCount
+                commentsNewCount: commentsCount
             },
             success(data) {
                 if (data.status) {
-                    $('#div1').html(data.answer);
+                    $('#response').html(data.answer);
+                    console.log(data.answer);
                     for (let i = 0; i < data.answer.length; i++) {
-                        $('#div1').append(data.answer[i].full_name + ' - ' + data.answer[i].message + '<br>');
+                        $('#response').append(data.answer[i].full_name + ' - ' + data.answer[i].message + '<br>');
                     }
                 }
             }

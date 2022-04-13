@@ -1,7 +1,7 @@
 $('.btn').click(function (e) {
     e.preventDefault();
     $('input').removeClass('error');
-    $('#div1').html('');
+    $('#response').html('');
     let full_name = $('input[name="full_name"]').val();
 
     $.ajax({
@@ -16,10 +16,10 @@ $('.btn').click(function (e) {
                 $('.msg').removeClass('none').text(data.message);
                 $('#form').trigger('reset');
                 if (data.answer) {
-                    $('#div1').html(data.answer);
+                    $('#response').html(data.answer);
                     //console.log(data);
                     for (let i = 0; i < data.answer.length; i++) {
-                        $('#div1').append(data.answer[i].full_name + ' - ' + data.answer[i].message + '<br>');
+                        $('#response').append(data.answer[i].full_name + ' - ' + data.answer[i].message + '<br>');
                     }
                 }
             } else {

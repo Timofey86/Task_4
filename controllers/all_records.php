@@ -32,7 +32,7 @@ if (mysqli_num_rows($result) > 0) {
     }
 } else {
     $response = [
-        "status" => true,
+        "status" => false,
         "message" => 'Пользователь не найден!',
 
     ];

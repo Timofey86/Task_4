@@ -17,8 +17,9 @@ class Two_Messages
 
     public function getTwoMessages()
     {
-        $query = "SELECT * FROM `users` WHERE `full_name` = '$this->full_name' LIMIT $this->commentNewCount;";
+        $query = "SELECT * FROM `users` WHERE `full_name` = '$this->full_name' LIMIT $this->commentNewCount";
         return mysqli_query($this->db,$query);
     }
 
 }
+// LIMIT $this->commentNewCount
