@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 13 2022 г., 08:58
+-- Время создания: Апр 17 2022 г., 11:04
 -- Версия сервера: 5.7.33-log
 -- Версия PHP: 7.3.33
 
@@ -24,20 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users`
+-- Структура таблицы `feedback`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `feedback` (
   `id` int(11) NOT NULL,
   `full_name` varchar(55) COLLATE utf8mb4_unicode_ci NOT NULL,
   `message` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `users`
+-- Дамп данных таблицы `feedback`
 --
 
-INSERT INTO `users` (`id`, `full_name`, `message`) VALUES
+INSERT INTO `feedback` (`id`, `full_name`, `message`) VALUES
 (2, 'Мухин Тимофей Валерьевич', '345634tertgdfg '),
 (3, 'Мухин Тимофей Валерьевич', 'w252ert dfg'),
 (4, 'Мухин Тимофей Валерьевич', 'привет всем'),
@@ -74,9 +74,9 @@ INSERT INTO `users` (`id`, `full_name`, `message`) VALUES
 --
 
 --
--- Индексы таблицы `users`
+-- Индексы таблицы `feedback`
 --
-ALTER TABLE `users`
+ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -84,9 +84,9 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT для таблицы `users`
+-- AUTO_INCREMENT для таблицы `feedback`
 --
-ALTER TABLE `users`
+ALTER TABLE `feedback`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 

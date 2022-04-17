@@ -22,6 +22,6 @@ require_once '../templates/navbar.php';
 <?php
 require_once '../templates/footer.php';
 ?>
-<script src="../../controllers/js/requestJS.js"></script>
+<script src="../../controllers/js/JS/requestJS.js"></script>
 </body>
 </html>

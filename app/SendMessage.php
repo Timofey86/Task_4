@@ -17,6 +17,6 @@ class Send_Message
 
     public function sendToDataBase()
     {
-        mysqli_query($this->db, "INSERT INTO `users` (`id`, `full_name`, `message`) VALUES (NULL, '$this->full_name', '$this->message')");
+        mysqli_query($this->db, "INSERT INTO `feedback` (`id`, `full_name`, `message`) VALUES (NULL, '$this->full_name', '$this->message')");
     }
 }

@@ -1,6 +1,6 @@
 <?php
 require_once '../config/connect.php';
-require_once '../app/All_records.php';
+require_once '../app/AllRecords.php';
 
 use app\All_records;
 

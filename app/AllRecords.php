@@ -15,7 +15,7 @@ class All_records
 
     public function getAllMessages()
     {
-        $query = "SELECT * FROM `users` WHERE `full_name` = '$this->full_name'";
+        $query = "SELECT * FROM `feedback` WHERE `full_name` = '$this->full_name'";
         return mysqli_query($this->db,$query);
     }
 }

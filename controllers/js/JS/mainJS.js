@@ -5,7 +5,7 @@ document.forms.form.onsubmit = function (e) {
     let body = 'full_name=' + encodeURIComponent(userInput) + '&message=' + encodeURIComponent(userInput2);
 
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', '/controllers/send_message.php')
+    xhr.open('POST', '/controllers/sendMessage.php')
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
     xhr.send(body);
     xhr.onreadystatechange = function () {
@@ -19,9 +19,7 @@ document.forms.form.onsubmit = function (e) {
                     $('.msg').removeClass('none').text(data.message);
                     $('input[name="${field}"]').addClass('error');
                 })
-
             }
         }
-
     }
 };

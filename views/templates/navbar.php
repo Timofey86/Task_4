@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="d-flex">
-        <a class="nav-link active" href="/views/pages/2page.php">2Page</a>
-        <a class="nav-link active" href="/views/pages/3page.php">3Page</a>
+        <a class="nav-link active" href="/views/pages/twoComents.php">Two comment</a>
+        <a class="nav-link active" href="/views/pages/allRecords.php">All records</a>
     </div>
 </nav>

@@ -1,18 +1,14 @@
-let commentsCount = 0;
+
 document.forms.form.onsubmit = function (e) {
     e.preventDefault();
-    commentsCount = commentsCount + 2;
-    let body = 'commentsNewCount=' + commentsCount;
-
+    let userInput = document.forms.form.full_name.value;
+    userInput = encodeURIComponent(userInput);
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', '../../controllers/2messages.php')
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send(body);
-
+    xhr.open('GET', '../../controllers/allRecords.php?' + 'full_name=' + userInput); // + '&key2=value2');
+    xhr.send();
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let data = JSON.parse(xhr.responseText);
-            console.log(data);
             if (data.status) {
                 let html = '';
                 for (let i = 0; i < data.answer.length; i++) {
@@ -24,6 +20,11 @@ document.forms.form.onsubmit = function (e) {
                     html += "</tr>";
                 }
                 document.getElementById("response").innerHTML = html;
+                $('.msg').removeClass('none').text(data.message);
+                $('#form').trigger('reset');
+            } else {
+                $('.msg').removeClass('none').text(data.message);
+                $('#form').trigger('reset');
             }
         }
     }

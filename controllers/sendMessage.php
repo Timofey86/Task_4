@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../config/connect.php';
-require_once '../app/Send_Message.php';
+require_once '../app/SendMessage.php';
 
 use app\Send_Message;
 
@@ -26,7 +26,7 @@ if (!empty($error_fields)) {
 }
 
 $full_name = mysqli_real_escape_string($db, $full_name);
-$message = mysqli_real_escape_string($db, $message);
+    $message = mysqli_real_escape_string($db, $message);
 $send_message = new Send_Message($db, $full_name, $message);
 $send_message->sendToDataBase();
 
@@ -35,7 +35,4 @@ $response = [
     "message" => 'Запись успешно добавлена!'
 ];
 echo json_encode($response);
-
-$_SESSION['user']['full_name'] = $full_name;
-
 

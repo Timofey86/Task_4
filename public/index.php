@@ -21,6 +21,6 @@ require_once '../views/templates/navbar.php';
 <?php
 require_once '../views/templates/footer.php';
 ?>
-<script src="../controllers/js/mainJS.js"></script>
+<script src="../controllers/js/JS/mainJS.js"></script>
 </body>
 </html>

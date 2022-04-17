@@ -3,10 +3,9 @@ $(document).ready(function () {
     $('.btn').click(function (e) {
         e.preventDefault();
         commentsCount = commentsCount + 2;
-        /*$('#response').html('');*/
 
         $.ajax({
-            url: '../../controllers/2messages.php',
+            url: '../../controllers/twoMessages.php',
             type: 'POST',
             dataType: 'json',
             data: {

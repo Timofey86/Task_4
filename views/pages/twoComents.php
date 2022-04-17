@@ -7,7 +7,6 @@ require_once '../templates/head.php';
 <?php
 require_once '../templates/navbar.php';
 ?>
-<?php var_dump($_SESSION['user']['full_name']);?>
 <div class="container">
     <form  id="form">
         <h1>Получить 2 последних комментария</h1>
@@ -20,6 +19,6 @@ require_once '../templates/navbar.php';
 <?php
 require_once '../templates/footer.php';
 ?>
-<script src="../../controllers/js/2messages.js"></script>
+<script src="../../controllers/js/JS/twoMessagesJS.js"></script>
 </body>
 </html>

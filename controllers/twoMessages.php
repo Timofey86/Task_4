@@ -1,14 +1,13 @@
 <?php
 session_start();
 require_once '../config/connect.php';
-require_once '../app/Two_Messages.php';
+require_once '../app/TwoMessages.php';
 
 use app\Two_Messages;
 
 $commentNewCount = $_POST['commentsNewCount'] ;
-$full_name = $_SESSION['user']['full_name'];
 
-$two_messages = new Two_Messages($full_name,$db,$commentNewCount);
+$two_messages = new Two_Messages($db,$commentNewCount);
 $result = $two_messages->getTwoMessages();
 $response = [
     "status" => true,

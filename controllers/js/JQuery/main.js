@@ -1,27 +1,21 @@
 $('.btn').click(function (e) {
     e.preventDefault();
     $('input').removeClass('error');
-    $('#response').html('');
     let full_name = $('input[name="full_name"]').val();
+    let message = $('input[name="message"]').val();
 
     $.ajax({
-        url: '../../controllers/all_records.php',
-        type: 'GET',
+        url: '/controllers/sendMessage.php',
+        type: 'POST',
         dataType: 'json',
         data: {
-            full_name: full_name
+            full_name: full_name,
+            message: message
         },
-        success(data) {
+       success(data) {
             if (data.status) {
                 $('.msg').removeClass('none').text(data.message);
                 $('#form').trigger('reset');
-                if (data.answer) {
-                    $('#response').html(data.answer);
-                    //console.log(data);
-                    for (let i = 0; i < data.answer.length; i++) {
-                        $('#response').append(data.answer[i].full_name + ' - ' + data.answer[i].message + '<br>');
-                    }
-                }
             } else {
                 data.fields.forEach(function (field) {
                     $('.msg').removeClass('none').text(data.message);
