@@ -2,7 +2,7 @@
 require_once '../config/connect.php';
 require_once '../app/AllRecords.php';
 
-use app\All_records;
+use app\Allrecords;
 
 $full_name = ($_GET['full_name']);
 $error_fields = [];
@@ -20,7 +20,7 @@ if (!empty($error_fields)) {
     die;
 }
 
-$all_records = new All_records($full_name, $db);
+$all_records = new Allrecords($full_name, $db);
 $result = $all_records->getAllMessages();
 $response = [
     "status" => true,

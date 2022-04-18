@@ -3,7 +3,7 @@ session_start();
 require_once '../config/connect.php';
 require_once '../app/SendMessage.php';
 
-use app\Send_Message;
+use app\SendMessage;
 
 $full_name = $_POST['full_name'];
 $message = $_POST['message'];
@@ -27,7 +27,7 @@ if (!empty($error_fields)) {
 
 $full_name = mysqli_real_escape_string($db, $full_name);
     $message = mysqli_real_escape_string($db, $message);
-$send_message = new Send_Message($db, $full_name, $message);
+$send_message = new SendMessage($db, $full_name, $message);
 $send_message->sendToDataBase();
 
 $response = [

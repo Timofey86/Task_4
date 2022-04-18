@@ -2,7 +2,7 @@
 
 namespace app;
 
-class All_records
+class AllRecords
 {
     private $full_name;
     private $db;

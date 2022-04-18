@@ -2,7 +2,7 @@
 
 namespace app;
 
-class Send_Message
+class SendMessage
 {
     private $full_name;
     private $message;

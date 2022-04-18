@@ -2,7 +2,7 @@
 
 namespace app;
 
-class Two_Messages
+class TwoMessages
 {
     private $db;
     private $commentNewCount;

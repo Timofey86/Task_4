@@ -3,11 +3,11 @@ session_start();
 require_once '../config/connect.php';
 require_once '../app/TwoMessages.php';
 
-use app\Two_Messages;
+use app\TwoMessages;
 
 $commentNewCount = $_POST['commentsNewCount'] ;
 
-$two_messages = new Two_Messages($db,$commentNewCount);
+$two_messages = new TwoMessages($db,$commentNewCount);
 $result = $two_messages->getTwoMessages();
 $response = [
     "status" => true,
